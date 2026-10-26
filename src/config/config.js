@@ -1,8 +1,10 @@
 import { config } from "dotenv"
 
- config()
+config()
 
 export const env = {
-//llandndo al .env, es la copia con el nombre del puerto.
-    PORT: process.env.PORT
+    PORT: process.env.PORT || 3000,
+    NODE_ENV: process.env.NODE_ENV || 'development',
+    MONGO_URL: process.env.MONGO_URL,
+    JWT_SECRET: process.env.JWT_SECRET
 }

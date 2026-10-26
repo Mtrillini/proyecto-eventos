@@ -1,14 +1,10 @@
 import express from 'express'
+import apiRouter from './routes/index.js'
 
-//config la aplicacion
 const app = express()
-//aplico json
+
 app.use( express.json() )
 
-app.get('/api/health', (req, res) =>{
-
-    res.status(200).json({status:"ok", message:"Servidor activo desde Controller"});
-
-})
+app.use('/api', apiRouter)
 
 export default app;
